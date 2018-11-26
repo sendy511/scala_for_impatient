@@ -7,7 +7,7 @@ import scala.math._
 import scala.math.BigInt._
 import scala.util.Random
 
-class Quiz extends FunSuite with DiagrammedAssertions {
+class QuizTest extends FunSuite with DiagrammedAssertions {
   test("1 to ...") {
     assert(sqrt(3 * 3) == 3)
 
@@ -23,5 +23,7 @@ class Quiz extends FunSuite with DiagrammedAssertions {
     assert(content.take(2) == "as")
     assert(content.drop(2) == "dfASDF")
     assert(content.takeWhile(x => x != 'A') == "asdf")
+
+    assert(content.intersect("ASE") == "AS")
   }
 }
