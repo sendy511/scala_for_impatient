@@ -31,7 +31,7 @@ class QuizTest extends FunSuite with DiagrammedAssertions {
     assert(Quiz.getPowerValue(10, 0) == 1)
     assert(Quiz.getPowerValue(10, -2) == 0.01)
   }
-  
+
 //  test("should be able to create LocalDate literally") {
 //    assert()
 //  }
