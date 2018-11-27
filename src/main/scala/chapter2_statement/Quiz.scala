@@ -1,6 +1,23 @@
 package chapter2_statement
 
+import scala.math.BigInt._
+//import scala.math.BigDecimal._
+
 object Quiz {
+  def getPowerValue(x: Int, power: Int): Double = {
+    if(power > 0 && power % 2 == 0) {
+      x.pow(power).toDouble
+    } else if (power > 0 && power % 2 == 1) {
+      (x * x.pow(power - 1)).toDouble
+    } else if (power == 0) {
+      1.0
+    } else if (power < 0) {
+      1.0 / x.pow(-power).toDouble
+    } else {
+      throw new Exception("Unsupported value")
+    }
+  }
+
   def getMultipleByIteration(str: String, value: Long): Long = {
     if(str.length <= 0){
       value
