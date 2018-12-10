@@ -1,5 +1,6 @@
 package chapter4_map_tuple
 
+import java.io.File
 import java.util.Scanner
 
 import org.scalatest.{DiagrammedAssertions, FunSuite}
@@ -17,14 +18,16 @@ class QuizTest extends FunSuite with DiagrammedAssertions {
   }
 
   test("should be able to count words") {
-    val in = new Scanner(new java.io.File("input.txt"))
+    val filePath = "src/test/scala/chapter4_map_tuple/input.txt"
+    val in = new Scanner(new java.io.File(filePath))
     while(in.hasNext()){
       val oneLine = in.next()
-      val stringToInt = Quiz.countWord(oneLine)
-      assert(stringToInt("Hello") == 2)
-      assert(stringToInt("world") == 1)
+      Quiz.countWord(oneLine)
     }
 
+    val worldCounts = Quiz.getResult
+    assert(worldCounts("Hello") == 2)
+    assert(worldCounts("world") == 1)
   }
 
 }
