@@ -38,5 +38,4 @@ class QuizTest extends FunSuite with DiagrammedAssertions {
     assert(car3.licenseNumber == "")
     assert(car4.modelYear == -1)
   }
-
 }
